@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.the-chaos.com/alvin/cs149fall2024/labs/11_lab13-list-play/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Lab13 - List Play - Processing list elements - CHAOAJ - Alvin Chao</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#lab13-list-play-processing-list-elements" class="nav-link">Lab13 - List Play - Processing list elements</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#background" class="nav-link">Background</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#objectives" class="nav-link">Objectives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#key-terms" class="nav-link">Key Terms</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-1-sequentially-accessing-an-array" class="nav-link">Part 1: Sequentially accessing an array</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-2-randomly-accessing-an-array" class="nav-link">Part 2: Randomly accessing an array</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-3-working-with-multiple-arrays" class="nav-link">Part 3: Working with multiple arrays</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#final-output" class="nav-link">FINAL OUTPUT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lab13-list-play-processing-list-elements">Lab13 - List Play - Processing list elements</h1>
+<p><img src="http://the-chaos.com/alvin/cs149spring2023/labs/lab-14-die/dice.png" alt="dice image"></p>
+<h2 id="background">Background</h2>
+<p>You will write today's program from scratch. Create a new Python program named list_play with a main method. For each step below, you should add code to the program without replacing prior code. When you are finished, this program will provide you with a reference for working with lists/arrays including initializing, printing, and comparing.</p>
+<h2 id="objectives">Objectives</h2>
+<pre><code>- Use a list to store a sequence of values.
+- Display the contents of an list with a loop.
+- Practice manipulating various types of lists.
+</code></pre>
+<h2 id="key-terms">Key Terms</h2>
+<ul>
+<li>initializer list
+    list of values used to instantiate and initialize an array in one step</li>
+<li>
+<p>len(list)
+    Returns the number of elements in a list</p>
+</li>
+<li>
+<p>subscript
+    integer value in brackets [ ] that specifies an element of an array/list</p>
+</li>
+<li>
+<p>ArrayIndexOutOfBoundsException
+    error raised when trying to access A[i] where i &lt; 0 or i &gt;= A.length</p>
+</li>
+</ul>
+<h2 id="part-1-sequentially-accessing-an-array">Part 1: Sequentially accessing an array</h2>
+<p>Whenever you are asked to do something to your array and then print it, you should finish the update step first and then have a separate loop to do the printing.
+1. Create a function called part_one() that creates a single array of integers that is 6 elements long you can initialize zero values for the initial array.
+2. Initialize each of the array elements to the value -1 using a loop of your choice.
+3. In another loop, save each element of the array into a string with newlines at the end as shown:
+ <br />
+<pre>
+    array[0] = -1
+    array[1] = -1
+    ...
+   </pre>
+</p>
+<ol>
+<li>Add code to change the value of each element of the array to its subscript. For example, array[3] should hold the value 3.</li>
+<li>Store the new contents of the array into the return string. You may copy and paste the code from step 3. </li>
+<li>If you have not seen a list index out of range error, make one by causing a loop to read past the end of the array. What happens?</li>
+<li>Fix the code that causes the list index out of range. Then add code to re-initialize</li>
+<li>Your function should return the final return string value(see expected FINAL OUTPUT section below for how this will look if you print the contents of part_one return string.</li>
+</ol>
+<h2 id="part-2-randomly-accessing-an-array">Part 2: Randomly accessing an array</h2>
+<ol>
+<li>Create a function called dice_roll(seed).  This function will take in a see value for the random module and return a dice roll value of 1-6. Don't forget to import random at the top of your program to use the random module. You should check that your seed is not None as well.</li>
+<li>
+<p>Create a function called part_two().  This should:</p>
+<ol>
+<li>Create an array of 6 int values [0, 0, 0, 0 ,0 , 0]</li>
+<li>Create a loop that will iterate at least 25 times. In the loop body:</li>
+<li>Roll the die. (using the dice_roll method in #1 above where the seed value sent is the index value of the loop for the 25 time 0-24)</li>
+<li>Based on the result of the roll, add up the corresponding cell of your array. The value of each array element should be the number of times that roll is made.</li>
+</ol>
+</li>
+<li>
+<p>After the loop finishes, print the results of the simulation. For example, the final array should be: [2, 8, 4, 4, 4, 3] you would output:</p>
+</li>
+</ol>
+<pre>
+1 was rolled 2 times.
+2 was rolled 8 times.
+...
+</pre>
+<p>see the FINAL OUTPUT below for how this should be formatted with double return statements at the end and return this output as a return string for the function.</p>
+<h2 id="part-3-working-with-multiple-arrays">Part 3: Working with multiple arrays</h2>
+<p>For this exercise, you will need two arrays of double values.
+Create a main section that sets up the two arrays like this:</p>
+<pre>
+print("Before")
+a1 = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
+a2 = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+print(store_array_values(a1, a2))
+change_array(a1, a2)
+print("After")
+print(store_array_values(a1, a2))
+</pre>
+<ol>
+<li>Write the first function store_array_values(a1, a2) which will take the two arrays as input then return an return string of the values of the arrays. See the FINAL OUTPUT section below for how this is formatted.</li>
+<li>
+<p>Write a second function change_array(a1, a2): This will change the values of the array as follows: </p>
+<ol>
+<li>Write a loop to change all values of a2 to those in a1.</li>
+<li>Finally, change the index 0 element of the first array(a1) to 99.0 and the index 5 element of the second array(a2) to 99.0.</li>
+</ol>
+</li>
+<li>
+<p>Check that the contents of the two arrays are indeed different after calling your change_array function. If not, make the appropriate corrections.  Check all output with the lab14.exp expected output below.</p>
+</li>
+</ol>
+<h2 id="final-output">FINAL OUTPUT</h2>
+<p>Here is the expected output file for <a href="../lab13/lab13.exp">lab13.exp</a>
+Submit your final list_play file to https://gradescope.com.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

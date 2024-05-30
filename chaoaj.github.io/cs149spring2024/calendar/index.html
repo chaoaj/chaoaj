@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.the-chaos.com/alvin/cs149spring2024/calendar/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>CS149 Section 003 Calendar - CHAOAJ - Alvin Chao</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#cs149-section-003-calendar" class="nav-link">CS149 Section 003 Calendar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cs149-section-003-calendar">CS149 Section 003 Calendar</h1>
+<h2><!--<p><a href="#Week1" title="Current Week">Current Week</a></p>--></h2>
+<p>
+<script type="text/javascript">// <![CDATA[
+dttest1 = new Date(2024,0,16);
+dttest2 = new Date(2024,4,24);
+
+function diff_weeks(dt2, dt1)
+ {
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000; // diff in secs
+  diff /= (60 * 60 * 24 * 7); // convert seconds to weeks
+  return Math.abs(Math.round(diff));
+
+ }
+// Start of semester - remember JS date month is one less than current.
+var dt1 = new Date(2024, 0, 12); // new Date(2023, 7, 17); // January 1 = (2021, 0, 1)
+// document.write("dt1" + dt1);
+var dt2 = new Date();
+// document.write("d2" + dt2);
+wk = diff_weeks(dt2,dt1);
+// document.write("Week: " + wk);
+if (wk >= 16) {
+    wk = 16;
+}
+else if (wk <= 0) {
+    wk = 1;
+}
+document.write("<a href=\"#Week"+wk+"\">Current Week</a>");
+document.write("<!-- wk " + wk + "-->");
+// ]]></script>
+
+</p>
+<p>Python and Config Resources:</p>
+<ul>
+<li><a href="https://docs.python.org/3/library/index.html" title="Java 10 API">Python 3 Standard Library</a>&#160; &#160;<a href="https://pythontutor.com/visualize.html#mode=edit#mode=edit" title="Java Virtualizer">Python Tutor</a>&#160; <a href="https://w3.cs.jmu.edu/bernstdh/web/SMYC/index.html">Show Me Your Code</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters" title="Unicode character list">Unicode Character List</a>&#160;&#160;<a href="https://docs.python.org/3/library/string.html#format-specification-mini-language">print formatting reference</a>&#160;&#160;<a href="https://docs.python.org/3/library/math.html">Math Module</a><br /><a href="https://w3.cs.jmu.edu/cs149/info/thonny/" title="Thonny/pep8">Thonny-Pep8</a></li></li>
+<li><a href="https://docs.python.org/3/tutorial/datastructures.html">List Methods</a>&#160;&#160;<a href="https://www.w3schools.com/python/python_ref_dictionary.asp">Dictionary Methods</a>.&#160; <a href="https://www.w3schools.com/python/python_ref_set.asp">Set Methods</a></li>
+<li><a href="https://w3.cs.jmu.edu/cs149/info/docstyle/">Docstring Style Guide</a></li>
+<li>Main program: <br/>if __name__ == "__main__":</li>
+</ul>
+
+<div>(<strong>Note: This schedule is tentative and is subject to change during the semester</strong>) <br /><br /><a href="/cs149spring2022/labs/lab-02/index" title="Lab 2A+B"></a></div>
+
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Date</th>
+<th>Reading</th>
+<th>Topic</th>
+<th>HW / Programming Assignment</th>
+<th>Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="Week1"></a> Week 1</td>
+<td>1/16/24</td>
+<td></td>
+<td><a href="https://docs.google.com/presentation/d/1XN88WHhstYMgwv8I58yB8SMPG3h-DPBVO4y_3ZG2rYc/edit#slide=id.g3d9ea2233c_2_79">Intro to CS149</a><br/><br/> <a href="https://docs.google.com/presentation/d/1y_WXgiiCCwwXaPHo3yzyrolP4elLPxPaAht3h5993vU/edit#slide=id.g3d9d9f697f_2_75">Intro Python Lecture 2</a><br/><br/>C1</td>
+<td>Obtain Book assignment</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1/18/24</td>
+<td></td>
+<td><a href="../python-setup">Thonny Video</a><br/><br/><a href="../labs/1_lab2-thonny">Lab 2 - Thonny</a> <a href="https://youtu.be/9JHJ-TFBU5M">lab2-video</a> C2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week2"></a> Week 2</td>
+<td>1/23/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048537">Chp 1 Reading</a><br/><br/>(Canvas/Zybook)Tue 11pm 1/23/24</td>
+<td><a href="https://docs.google.com/presentation/d/1nxYqiwGi21mULwtOvzI6ad2sE0jjM0vfqi1IB_8jDBg/edit#slide=id.g3d9e4ed754_2_75">Lecture 3</a> HW1.1-1.2 in class <br /><br /><a href="../labs/2_lab3-style">Lab 3 - Style</a>.<br/><br/><a href="https://youtu.be/yucPdF9Tbd0">Lab 3 Video</a>  C2</td>
+<td>Start <a href="https://w3.cs.jmu.edu/cs149/hw/hw1/">HW 1(due Wed 1-24-24 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>1/25/24</td>
+<td></td>
+<td>Statements: <a href="https://docs.google.com/presentation/d/1cjF_sFkA042oJu9-GaJwAg--HGI60j6wQoz5xJLocIY/edit#slide=id.g3d9e4ed754_2_75">Lecture 3B</a><br/><br/><a href="../labs/3_lab4-variables">Lab 4</a><br/><br/> C3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week3"></a> Week 3</td>
+<td>1/30/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048541">Chp 2 Reading</a><br/><br/>(Canvas/Zybook)Tue 11pm 1/30/24</td>
+<td><a href="https://docs.google.com/presentation/d/1UgRAlPt4y2gw1Uz3BJTo302iPO5kYr_bl6K7BLhhsbo/edit#slide=id.g3d98fc13d0_2_110">Lecture 4</a><br/><a href="https://youtu.be/rtnzmbBqVfI">Interpret Gradescope errors video</a><br/><br/><a href="https://w3.cs.jmu.edu/spragunr/CS149_S22/www/lab/variables/variables.shtml">Practice variables lab</a> referenced in Gradescope errors video C4</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/hw/hw2/">HW 2(Wed 1-31-24 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2/2/24</td>
+<td></td>
+<td>Expressions:<br/> <a href="https://docs.google.com/presentation/d/1EsxKMjWEaDzmBjp7E0nqbuMr_oFM-KxhfxQu324Ws7k/edit#slide=id.g3fead46c81_2_75">Lecture 6 Circle Math</a><br/><br/><a href="https://docs.google.com/presentation/d/10fhP79RaJ4yYvlo7Xut7i3-yd8sKDKD5QS2LimnZQ-s/edit#slide=id.g40b5ecb961_2_91">Conditionals Lecture 5</a><br/><br/><strong>Practice Quiz1</strong> - In Class C5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week4"></a> Week 4</td>
+<td>2/6/24</td>
+<td>Branching/Conditionals/Assert:<br/><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048526">Chp  3 Reading</a><br /><br/>(Canvas/Zybook) Mon 11pm 2-5-24</td>
+<td>Assessment Day<br />No Class C6 <br/><a href="../labs/4_lab6-if-then/">Lab 6 If Then</a><br/></td>
+<td><a href="https://w3.cs.jmu.edu/cs149/hw/hw3/">HW3 (Wed 2-7-23 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2/8/24</td>
+<td></td>
+<td><a href="https://docs.google.com/presentation/d/1fhdL0KzGb995KnNQyddbvrP1qfGfVNkwcSujeT2Knlw/edit#slide=id.g414d39d8ee_2_75">Conditionals Lecture 7</a><br/><br/> <a href="https://docs.google.com/presentation/d/1tFpP7Gypuu2ypA6wKxSfiJYFHboT3SwLhJ3XaR-_tKc/edit#slide=id.g112a7302985_1_0">Functions Lecture 8</a><br/><br/> <strong>Actual Quiz1</strong> <br/> <br/>C7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week5"></a> Week 5</td>
+<td>2/13/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048545">Chp 4 Reading</a> Tue 2-13-24 11pm <br/><a href="/cs149spring2022/slides/time.pdf" title="Time Management">Time Management</a></td>
+<td>Functions:<br/> <a href="https://docs.google.com/presentation/d/1SYf9ahhx6vOMKVATo0C23x_fOQMMKpIzcPkqtfQaWDM/edit#slide=id.g112ae690ed2_1_11">Lecture 9 Functions</a> <br/> <br/> <a href="../labs/5_lab7-circle">Lab 7 Circle Lab</a><br/><br/> <a href="https://codingbat.com/python/Logic-1">Coding Bat logic1 practice</a><br/> C8</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/hw/hw4/">HW4 (Wed 2-14-24 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2/15/24</td>
+<td>Chp 4</td>
+<td><a href="https://docs.google.com/presentation/d/1cf1UprjN2o9TpPFY_zIbImVgymIeXLjna38ZimH3dH4/edit#slide=id.g27b6321382d_0_305">Lecture 10 Containers</a><br/><br/> <strong>Practice Quiz2</strong>  <br/><br/> C9 <br/></td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a name="Week6"></a> Week 6</td>
+<td>2/20/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048546">Chp 5 Reading</a> <br/>due Tue 2-20-24 11pm</td>
+<td>Types including lists, sets, dicts<br/><a href="https://docs.google.com/presentation/d/1_NSJiIaQko76whBJWYsS6-NObZCWvf5JM6vbBUiCxM8/edit#slide=id.g27b6321382d_0_112">Lecture 11 more containers</a><br/><br/><a href="../labs/6_lab8-list-tuple/">Lab 8 List - Tuples</a><br /><br/>C10</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/hw/hw5/">HW5 (Wed 2-21-24 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2/22/24</td>
+<td><a href="/cs149spring2022/labs/lab-04/honor-code-case-studies.pdf" title="Honor Code Case Studies">Honor Code Case Studies(pdf)</a><br/><a href="/cs149spring2022/honor-code-cases" title="Honor Code Videos">Honor Code Videos</a><br/><br/><a href="http://www.jmu.edu/honorcode/_files/Honor_Council_printable_6_2015.pdf" title="Honor Code">Honor Code Sheet</a><br/></td>
+<td>C11    <strong>Actual Quiz 2</strong> <a href="https://docs.google.com/presentation/d/1QuymSW3SF_2z9EnU_2IWnVKXQKa3ru54vBp34V9Iw88/edit#slide=id.g43ea64391e_2_75">Lecture 12 - For loops</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week7"></a> Week 7</td>
+<td>2/27/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048547">Chp 6 Reading due Tue 2-27-24 11pm</a></td>
+<td><a href="https://codingbat.com/python/List-1">Coding Bat Loops Lab recommend  first_last6 to sum3 - not graded</a><br/><br/><a href="../labs/7_lab9-haiku-lab/">Lab 9 Haiku Lab</a><br /> C12</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/hw/hw6/">HW6 (Wed 2-28-24 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>2/29/24</td>
+<td></td>
+<td><a href="https://docs.google.com/presentation/d/1NE1sbDDRgSNolxjyIVXrUVNnmq9KfC0CsbszDa56E7Y/edit#slide=id.g40b5ee72a5_2_81">Lecture 13 While loops</a> <br /><br/> C13 <br/> Practice Quiz 3  <br /><br /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week8"></a> Week 8</td>
+<td>3/5/24</td>
+<td><a href="https://learn.zybooks.com/zybook/JMUCS149Spring2024">Chp7 While Loops</a> due Tue 3-5-24 11pm</td>
+<td><a href="https://docs.google.com/presentation/d/1SthL4zN4J3CKKy12jJ1i0c42eozGuujmt83hyLOJ2hc/edit#slide=id.g43ea64391e_2_75">Lecture Unit Testing</a><br/>  <a href="../labs/_lab11-8ball/">Lab 11 Eight Ball Lab</a>  C14</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/hw/hw7/">HW7 (Wed 3-6-24 11pm)</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>3/7/24</td>
+<td></td>
+<td>C15  <a href="https://docs.google.com/presentation/d/1bElhg1Z8tfueDG15iobizDdeJPHj6FFAm5pmAoGHS58/edit#slide=id.g43ea64391e_2_75">Lecture Modules</a> <strong>Actual Quiz 3</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week9"></a> Week 9</td>
+<td>3/12/24</td>
+<td>-</td>
+<td>No class - Spring Break</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>3/14/24</td>
+<td>-</td>
+<td>No class Spring Break March 11-15 C17</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week10"></a> Week 10</td>
+<td>3/19/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048543">Chp8 Modules</a> reading due 3-19-24 11pm</td>
+<td><a href="../labs/10_pa1-tests/">Tests for PA1</a> and <a href="https://w3.cs.jmu.edu/cs149/info/pytest/">PyTest</a><br/></td>
+<td><a href="https://w3.cs.jmu.edu/cs149/pa/pa1/">PA1-Readiness Quiz in Canvas due Thu 3/21/24</a> <a href="https://w3.cs.jmu.edu/cs149/pa/pa1/">PA1A Dice due Sun 3/24/24</a></td>
+<td>3/22/24 Withdraw W deadline</td>
+</tr>
+<tr>
+<td></td>
+<td>3/21/24</td>
+<td></td>
+<td><a href="https://docs.google.com/presentation/d/1f5RMcU_o3PDQcNEKnJihdy8WrSPsXm66FmXuKX7pbv0/edit#slide=id.g43ea64391e_2_75">Lecture 16 - File IO</a> Practice Quiz 4</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a name="Week11"></a> Week 11</td>
+<td>3/26/24</td>
+<td><a href="https://canvas.jmu.edu/courses/1997080/assignments/18048544">Chp9 File I/O</a> reading due 3-26-24 11pm</td>
+<td><a href="https://docs.google.com/presentation/d/12zeyDczC4y4zEtCW4NFKZkwE8TND61ZsOnOkyEsr63A/edit#slide=id.g294999aca55_0_1">Lecture 17 Command line</a> <a href="../labs/11_lab13-list-play/">Lab 13 List Play</a> <br/></td>
+<td><a href="https://w3.cs.jmu.edu/cs149/pa/pa1/">PA1B due 4-1-24</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>3/28/24</td>
+<td></td>
+<td><a href="https://docs.google.com/presentation/d/1c9xQGESGEVm6x-KrcpbZcBJ4usMN7i0gTNU1o82btc8/edit#slide=id.g29557dcf7bb_0_34">Lecture Sequences/Strings</a> Actual Quiz 4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week12"></a> Week 12</td>
+<td>4/2/24</td>
+<td><a href="https://learn.zybooks.com/zybook/JMUCS149Spring2024">Chp10 Sequences</a></td>
+<td><a href="../labs/12_lab15-files">Lab 14 FileI/O</a>  <a href="https://w3.cs.jmu.edu/cs149/info/vscode/">VS Code</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>4/4/24</td>
+<td></td>
+<td>Practice Quiz 5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week13"></a> Week 13</td>
+<td>4/9/24</td>
+<td><a href="https://learn.zybooks.com/zybook/JMUCS149Spring2024">Chp 11  Nested Data</a></td>
+<td><a href="https://docs.google.com/presentation/d/1nRJsgvqaEL0yqBE0NIpyT7XuMwWL4IUslztIKfeiJ9Q/edit#slide=id.g43ea64391e_2_75">Lecture 19 Nested Loops</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>4/11/24</td>
+<td></td>
+<td>Actual Quiz 5 <br/> <a href="https://docs.google.com/presentation/d/1W8QIQMDltBTYMeS4KYcZd9ln9yalFNUENFypT4PC4FQ/edit#slide=id.g441b6e16ed_2_107">Recursion lecture</a></td>
+<td><a href="https://w3.cs.jmu.edu/cs149/pa/pa2/">PA2 Readiness Quiz due 4/11 11pm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week14"></a>Week 14</td>
+<td>4/16/24</td>
+<td><a href="https://learn.zybooks.com/zybook/JMUCS149Spring2024">Chp 12 Recursion</a></td>
+<td><a href="../labs/13_lab15-recursive-lists">Lab 15 - Recursion</a></td>
+<td><a href="https://w3.cs.jmu.edu/cs149/pa/pa2/">PA2A word_files due Sun 4/14 11pm</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>4/18/24</td>
+<td></td>
+<td><a href="https://docs.google.com/presentation/d/1JMzKkJ2tN0drDZr3uI77iw07Trp51DH7gBZtRsYJJfU/edit#slide=id.g441b6e16ed_2_91">JSON examples</a>Practice Quiz 6 <br/><br/>C26</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/pa/pa2/">PA2B boxed.py due Tue 4/23 11pm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week15"></a>Week 15</td>
+<td>4/23/24</td>
+<td></td>
+<td><a href="../labs/13_lab16-stars">Stars Lab</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>4/25/24</td>
+<td></td>
+<td>Actual Quiz 6</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><a name="Week16"></a>Week 16</td>
+<td>4/30/24</td>
+<td></td>
+<td>PA3 work day</td>
+<td><a href="https://w3.cs.jmu.edu/cs149/pa/pa3/">PA3 due Tue 4/30</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>5/2/24</td>
+<td></td>
+<td>Final Review</td>
+<td></td>
+<td>Last day of classes</td>
+</tr>
+<tr>
+<td><a name="Week17"></a>Week 17</td>
+<td>5/7/24</td>
+<td>Exam Week</td>
+<td><a href="https://www.jmu.edu/registrar/wm_library/1241_spring_exam_schedule.pdf">Exam Schedule</a></td>
+<td></td>
+<td>Exam Week</td>
+</tr>
+<tr>
+<td></td>
+<td>5/9/24</td>
+<td></td>
+<td>Final Exam - Thu 5/9 8-10am</td>
+<td></td>
+<td>Exam Week</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#top"><span title="Back to Top"></span>Back to Top</a>
+ 
+<p id="back-top" style="display: block;"><a href="#top"><span title="Back to Top"></span>Back to Top</a></p></p>
+<script type="text/javascript">
+    // <![CDATA[
+    $(window).load(function(){ // using window load function instead of document ready function
+
+    /* Animated scroll to top by @NickLa, Web Designer Wall (http://webdesignerwall.com/tutorials/animated-scroll-to-top) with modifications by johns2ja */
+        // hide #back-top first
+        $("#back-top").hide();
+
+        // fade in #back-top
+        //$(function () { /* remove containing function to ensure it works cross-browser - johns2ja */
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
+
+            // scroll body to 0px on click
+            $('#back-top a').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+    // });       /* remove containing function to ensure it works cross-browser */
+    });
+    // ]]>
+</script>
+
+<style type="text/css">
+<!--
+#back-top {
+  bottom: 130px;
+  left: 5%; /* instead of margin-left - johns2ja */
+  position: fixed;
+}
+#back-top a {
+  color: #bbb !important;
+  display: block;
+  font-size: 11px;
+  height: 75px;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+  width: 75px;
+}
+#back-top span {
+  background: #ddd url("//www.jmu.edu/jmucmsfiles/images/up-arrow.png") no-repeat scroll center center;
+  border-radius: 15px;
+  display: block;
+  height: 75px;
+  margin-bottom: 7px;
+  transition: all 1s ease 0s;
+  width: 75px;
+}
+@media all and (max-width:768px){ /* RWD by johns2ja */
+        #back-top {
+                bottom: 3%;
+                left: 1%;
+        }
+        #back-top a {
+                height: 32px;
+                width: 32px;
+                font-size: 0px;
+        }
+        #back-top span {
+                width: 32px;
+                height: 32px;
+                background-size: 32px;
+        }
+}
+-->
+</style></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

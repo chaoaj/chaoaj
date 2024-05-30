@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.the-chaos.com/alvin/cs149fall2023/labs/6_lab8-list-tuple/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Lab 8 - List-Tuple Lab - CHAOAJ - Alvin Chao</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#lab-8-list-tuple-lab" class="nav-link">Lab 8 - List-Tuple Lab</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#problem-ascii-art-roses" class="nav-link">Problem: ASCII Art Roses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hints" class="nav-link">Hints</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lab-8-list-tuple-lab">Lab 8 - List-Tuple Lab</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In this lab you will gain some practice with lists and tuples.
+<a href="https://w3.cs.jmu.edu/cs149/info/docstyle/">Docstring Guide</a></p>
+<p>============</p>
+<h2 id="problem-ascii-art-roses">Problem: ASCII Art Roses</h2>
+<p>Long ago, before computers could display high resolution graphics on 4K monitors with 300 dpi pixel density and churn out stunning real-time 3D graphics at 60 frames per second, many people spent a lot of time making art on computers out of text using the ASCII character set.</p>
+<p>Like this:</p>
+<pre>.........................................
+...####...####....###...##..##...####....
+..##.....##........##...##..##..##..##...
+..##......###......##...######...#####...
+..##........##.....##.......##......##...
+...####..####.....####......##....###....
+.........................................
+</pre>
+
+<p>You are going to write a program to output five ASCII art roses. Like this:</p>
+<pre>     @--&gt;----&gt;---
+      @-----&gt;-&gt;--
+@-----&gt;-------&gt;--
+  @-&gt;-&gt;----------
+           @-&gt;-&gt;-
+</pre>
+
+<p>Each rose starts with an @ followed by a section of dashes - before the first thorn &gt;, followed by a second section of dashes to a second thorn, followed by a final section of dashes -.</p>
+<p>For your first pass at this algorithm, you should have five variables: rose1, rose2, rose3, rose4, and rose5. Each variable should refer to a tuple with 3 integers denoting the number of dashes ('-') in each of the rose’s sections. For example, the first rose in the figure above has two dashes in the first section, four dashes in the second section, and three dashes in the final section, so its tuple representation is (2, 4, 3).</p>
+<p>Your code should use the variables rose1, rose2, rose3, rose4, and rose5 to output each rose, one per line. The roses should be aligned so that their right-hand sides line up and the longest rose has no spaces before its petals (the '@'). Any rose shorter than the longest rose should have an appropriate number of spaces before the '@'.
+Here is starter code:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"></a><span class="co">""" Rose Variables """</span>
+<a class="sourceLine" id="cb1-2" title="2"></a>rose1 <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>)
+<a class="sourceLine" id="cb1-3" title="3"></a>rose2 <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)
+<a class="sourceLine" id="cb1-4" title="4"></a>rose3 <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">2</span>)
+<a class="sourceLine" id="cb1-5" title="5"></a>rose4 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">10</span>)
+<a class="sourceLine" id="cb1-6" title="6"></a>rose5 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"></a><span class="co">""" Your code here """</span></code></pre>
+
+<h2 id="hints">Hints</h2>
+<ul>
+<li>Can you calculate the length of rose 1 using the data in rose1?</li>
+<li>Can you put the lengths of all five roses into a list? If so, can you use list functions to find the length of the longest rose?</li>
+<li>Remember that you can multiply a string by an integer to duplicate it. So "abc" * 3 is "abcabcabc".</li>
+<li>To right justify a string you can use the rjust method.</li>
+</ul>
+<p>Submit your roses.py file to Gradescope.</p>
+<p>This lab was originally created by Nathan Sprague.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

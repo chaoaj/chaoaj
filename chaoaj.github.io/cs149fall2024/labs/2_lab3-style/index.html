@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.the-chaos.com/alvin/cs149fall2024/labs/2_lab3-style/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>2 lab3 style - CHAOAJ - Alvin Chao</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#lab03-style-guide-and-pep8" class="nav-link">Lab03: Style guide and pep8</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#pep8-python-style" class="nav-link">PEP8 - Python Style</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#comments" class="nav-link">Comments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="lab03-style-guide-and-pep8">Lab03: Style guide and pep8</h2>
+<p><img alt="Code Quality" src="../lab03/code_quality.png" title="I honestly didn't think you could even USE emoji in variable names. Or that there were so many different crying ones." /> <br />
+Source: <a href="https://xkcd.com/1513/">https://xkcd.com/1513/</a></p>
+<h3 id="background">Background</h3>
+<h2 id="pep8-python-style">PEP8 - Python Style</h2>
+<p>When writing in English, readability can be impacted by the way the text is laid out on the page. We use conventions, like indenting the first sentence of a paragraph, to make it easier to understand written text. Programming languages are the same. Programs are easier to read if we agree on a set of conventions for how the code should be formatted. <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> is the official document that describes the standard formatting conventions for Python code. (Here is a prettier version: <a href="https://pep8.org/">https://pep8.org/</a>.) You don’t need to read and understand the full PEP 8 document now, but you may want to look it over to get a feel for the issues that it addresses. Instructions for <a href="https://w3.cs.jmu.edu/cs149/info/thonny/">installing Thonny and flake8 configuration</a></p>
+<h2 id="comments">Comments</h2>
+<p>When writing your programs it is helpful for us if you include the assignment name, a description of the assignment, your name, the due date and an Honor Code statement to let us know where you got help from on the assignment.  These should be done in a block at the top of your program that looks like this:</p>
+<pre>
+"""  
+Lab 03- Style lab - fixing styles and testing online grading tool submission.  
+Author: Alvin Chao  
+Version: 1-26-22  
+Honor Code: I got help on the output statements for the lab from TA John  
+""" 
+</pre>
+
+<h3 id="part-1">Part 1</h3>
+<h3 id="running-flake8-through-thonny">Running flake8 Through Thonny</h3>
+<p>When you submit homework assignments for CS 149 they will automatically be checked against the PEP 8 formatting requirements using a tool named <code>flake8</code>. You will only receive full credit if you pass all of these automated style checks. You can install <code>flake8</code> in Thonny by selecting <em>Tools -&gt; Manage Packages…</em> and then finding and installing <code>flake8</code> as well as <code>pep8-naming</code>. After installation, you should be able to check your file by typing the following into the Thonny shell:</p>
+<pre><code>&gt;&gt;&gt; !flake8 payroll.py
+</code></pre>
+<p>The exclamation point tells the Python interpreter the command should not be interpreted as Python code.</p>
+<p>Note that the Gradescope autograder is configured to be slightly more lenient than the default settings for <code>flake8</code>. We allow line lengths up to 100 and disable checks for some errors and warnings. If you want to run <code>flake8</code> with exactly the same settings as Gradescope, you can copy the following file into the same directory as your python code:</p>
+<ul>
+<li><a href="https://w3.cs.jmu.edu/cs149/info/setup.cfg">setup.cfg</a></li>
+</ul>
+<h3 id="part-2">Part 2</h3>
+<h3 id="example-program">Example Program</h3>
+<p>If you haven't already, you should create a top-level <code>CS149</code> folder to organize all your labs and other assignments for the semester. Then create a <code>lab03</code> folder for today's lab. (If you logged in as <code>student</code> today, please log out and log back in with your own account.)</p>
+<ol>
+<li>Download: <a href="https://w3.cs.jmu.edu/chaoaj/cs149/labs/lab03/payroll.py">payroll.py</a>
+    &gt;&gt;&gt; !flake8 payroll.py</li>
+<li>You should see the following errors:</li>
+</ol>
+<pre>
+payroll.py:1:27: E231 missing whitespace after ','  
+payroll.py:5:43: E251 unexpected spaces around keyword / parameter equals  
+payroll.py:6:2: N816 variable 'payRate' in global scope should not be mixedCase  
+payroll.py:7:2: N816 variable 'grossPay' in global scope should not be mixedCase  
+payroll.py:9:2: N816 variable 'grossPay' in global scope should not be mixedCase  
+payroll.py:9:9: E225 missing whitespace around operator  
+payroll.py:11:39: W292 no newline at end of file
+</pre>
+<p>Fix all style errors by repeatedly running flake8 and submit to Gradescope when your file checks all style issues.</p>
+<p><em>Submission:</em> At the end of class today, or by 11:00 PM tomorrow if you would like more time, submit a corrected version of payroll.py via <a href="https://www.gradescope.com/">Gradescope</a> . Your code must pass flake8 style without any warnings <strong>AND</strong> meet all the requirements outlined below. (It must also compile and run correctly; don't change the program's behavior.)  If you cannot get this working in Gradescope you may upload to Canvas, but points will be deducted.</p>
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the program. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+<h4 id="a-comments">A. Comments</h4>
+<p># An inline comment must contain only one # and a space after it.</p>
+<p>"""
+ *Block comments should end with the closing statement on its own line.
+"""</p>
+<h4 id="b-names">B. Names</h4>
+<ol>
+<li>All names should be descriptive and readable. (<code>sub_total</code> rather than <code>s</code>,  <code>grade</code> rather than <code>grd</code>)</li>
+<li>Multiple-word names should use underscores to separate words. (<code>sub_total</code> not <code>subTotal</code>)</li>
+<li>Variable and method names should begin with a lowercase letter, and:<ul>
+<li>Variable names should be nouns or noun phrases. (<code>student_name</code> or <code>sub_total</code>)</li>
+<li>Function names should be verbs or verb phrases. (<code>print_line</code> or <code>add_column</code>)</li>
+</ul>
+</li>
+<li>Class names should begin with a capital letter and use title or CapWords case. (<code>HelloWorld</code>)</li>
+<li>Constant names should be all caps with an underscore separator. (<code>PI</code> or <code>INTEREST_RATE</code>)</li>
+</ol>
+<h4 id="c-declarations">C. Declarations</h4>
+<pre>
+CENTIMETERS\_PER\_INCH = 2.54
+centimeters = inches \* CENTIMETERS\_PER\_INCH    // NOT inches \* 2.54
+</pre>
+<ol>
+<li>
+<ol>
+<li>All constants should be named and initialized at the top of the function in which they are used.</li>
+<li>All variables should also be declared at the top of the function, directly after any constant declaraions.</li>
+</ol>
+</li>
+</ol>
+<h4 id="d-literals">D. Literals</h4>
+<ol>
+<li>Numeric literals should be of the correct type for the context in which they are used.</li>
+</ol>
+<p># integer expressions should use integer literals like a
+a = 2<br />
+# double expressions should use double literals like b<br />
+b = 2.0</p>
+<pre>average = (x + y) / 2.0    # NOT 2, which is an integer</pre>
+
+<h4 id="e-indentation">E. Indentation</h4>
+<ol>
+<li>Subsections of code should be indented consistently with four spaces per Python requirements.</li>
+<li>Always use four space characters, not tab characters, for indentation.</li>
+<li>Statements too long for one line should be indented on subsequent lines.</li>
+</ol>
+<h4 id="f-whitespace">F. Whitespace</h4>
+<ol>
+<li>There should be a space after commas, and #'s.</li>
+<li>Use whitespace to separate logical segments of code. There should be a blank line after variable declarations.</li>
+<li>Lines should be kept to a short length (&lt; 80 - 100 chars). You should be able to see the full line in your text editor.</li>
+<li>Binary operators should be separated from their operands by a single space. (<code>sum = my_grade + your_grade</code>)</li>
+<li>Unary operators should not be separated by a space. (<code>my_grade++</code>)</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
