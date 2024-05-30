@@ -4,23 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
-        <link rel="canonical" href="https://chaoaj.github.io/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>CHAOAJ - Alvin Chao</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="canonical" href="https://chaoaj.github.io/cs149fall2024/labs/3_lab4-variables/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Lab 4 - Variables - CHAOAJ - Alvin Chao</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">CHAOAJ - Alvin Chao</a>
+                <a class="navbar-brand" href="../../..">CHAOAJ - Alvin Chao</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -30,23 +30,23 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="about/" class="nav-link">About</a>
+                                <a href="../../../about/" class="nav-link">About</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                                <a href="../../" class="nav-link">CS149 Fall 2024</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                                <a href="../../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                                <a href="../../syllabus" class="nav-link">149 Syllabus</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                                <a href="../../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
                             </li>
                             <li class="navitem">
                                 <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
@@ -55,7 +55,7 @@
                                 <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
                             </li>
                             <li class="navitem">
-                                <a href="resources/" class="nav-link">Resources</a>
+                                <a href="../../../resources/" class="nav-link">Resources</a>
                             </li>
                         </ul>
 
@@ -65,16 +65,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="about/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -93,13 +83,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#alvin-chao" class="nav-link">Alvin Chao</a>
+            <li class="nav-item" data-level="1"><a href="#lab-4-variables" class="nav-link">Lab 4 - Variables</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#courses" class="nav-link">Courses:</a>
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#contact" class="nav-link">Contact</a>
+            <li class="nav-item" data-level="2"><a href="#problem-splitting-feet-into-miles-furlongs-and-feet" class="nav-link">Problem: Splitting feet into miles, furlongs, and feet.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#submission" class="nav-link">Submission:</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -110,150 +104,36 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="alvin-chao">Alvin Chao</h1>
-<hr />
-<div id="hcard-Alvin-Chao" class="vcard">
- <a class="url fn" href="http://www.the-chaos.com/alvin">Alvin Chao</a>
- <a class="email" href="mailto:chaoaj [at] jmu.edu">chaoaj [at] jmu.edu</a>
- <div class="adr">
-  <div class="street-address">MSC 5734</div>
-  <span class="locality">Harrisonburg</span>,
-  <span class="region">VA</span>
-  <span class="postal-code">22807</span>
-  <span class="country-name">USA</span>
- </div>
- <div class="tel">540-568-6206</div>
-
-<p style="font-size:smaller;">This <a href="http://microformats.org/wiki/hcard">hCard</a> created with the <a href="http://microformats.org/code/hcard/creator">hCard creator</a>.</p>
-</div>
-
-<hr />
-<h2 id="courses">Courses:</h2>
-<p>Current:<br/></p>
-<hr />
-<table>
-<thead>
-<tr>
-<th>CS 149</th>
-<th>CS 159</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#">Fall 2024</a></td>
-<td><a href="#">Fall 2024</a></td>
-</tr>
-<tr>
-<td>-----------------------------------------------------------------------------------------------------------</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Past Courses:</p>
-
-<hr />
-<table>
-<thead>
-<tr>
-<th>CS 149</th>
-<th>CS 159</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="cs149spring2024/index.html">CS149 Spring 2024</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2023/index.shtml">CS149 Spring 2023</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2022/index.shtml">CS 149 Fall 2022</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2022/index.shtml">CS149 Spring 2022</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2021/index.shtml">CS149 Fall 2021</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2021/index.shtml">CS149 Spring 2021</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2020/index.shtml">CS149 Fall 2020</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2020/index.shtml">CS149 Spring 2020</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2019/index.shtml">CS149 Fall 2019</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2019/index.shtml">CS149 Spring 2019</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2018/index.shtml" title="CS149 Fall 2018">CS149 Fall 2018</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2018/index.shtml" title="CS 149 Spring 2018">CS149 Spring 2018</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2017/index.shtml" title="CS 149 Fall 2017">CS149 Fall 2017</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2017/index.shtml" title="CS 149 Spring 2017">CS149 Spring 2017</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2016/index.shtml" title="CS 149 Fall 2016">CS149 Fall 2016</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs139spring2016.shtml" title="CS139 Spring 2016">CS139 Spring 2016</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="Zcs240fall2015/index.shtml" title="CS 240 Fall 2015">CS240 Fall 2015</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------------------------------------------------</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="contact">Contact</h2>
-<div class="yui3-u-3-4 yui3u34">
-<div style="text-align: left;">Contact chaoaj[at]jmu.edu for more information about this page or Twitter: <a href="https://twitter.com/chaoaj" title="Chaoaj Twitter">@chaoaj</a><br>
- <a href="http://www.the-chaos.com/alvin/ajcres.htm" style="font-size: 10px;"></a></div>
+<h1 id="lab-4-variables">Lab 4 - Variables</h1>
+<h2 id="introduction">Introduction</h2>
+<p>============</p>
+<p>This activity will help you practice some of the concepts from this week and prepare for the homework problems next week.</p>
+<p>Specifically you will practice:</p>
 <ul>
-<li style="text-align: left;">
-<div><a href="http://www.the-chaos.com/alvin/ajcres.htm" style="font-size: 10px;">See my&nbsp;Resume</a></div>
-</li>
-<li style="text-align: left;">
-<div><a href="http://www.the-chaos.com/alvin/ajcres.htm" style="font-size: 10px;"></a><a href="http://pushdashpop.wordpress.com/" style="font-size: 10px;">My Blog</a></div>
+<li>Converting user input to either a floating point number (float), like 3.14159, or an integer (int), like 314159.</li>
+<li>Using floating point division (/), integer division (//), and the remainder, or mod, operator (%) in the appropriate situations.</li>
+</ul>
+<h2 id="problem-splitting-feet-into-miles-furlongs-and-feet">Problem: Splitting feet into miles, furlongs, and feet.</h2>
+<p>============</p>
+<p>For this problem you are going to write a program called <code>feet_conversion.py</code> to use integer division and remainders to take a total number of feet and split it into miles, furlongs, and feet. 1 mile is 5280 feet and 1 furlong is 660 feet (it’s some old English measure nobody uses anymore, but let’s do it anyways!).</p>
+<p>Enter a total number of feet: 12345  </p>
+<p>12345 total feet is 2 mile(s), 2 furlong(s), and 465 feet.</p>
+<ul>
+<li>
+<p><strong>Hint 1:</strong> Figure out how to solve the problem yourself by hand on paper. You can’t code something you don’t know how to solve.</p>
 </li>
 <li>
-<div style="text-align: left;"><a href="http://pushdashpop.wordpress.com/" style="font-size: 10px;"></a><a href="http://www.the-chaos.com/alvin" style="font-size: 10px;">My Personal Homepage: http://www.the-chaos.com/alvin</a></div>
+<p><strong>Hint 2:</strong> You need to use integer division // and the mod/remainder % operators.</p>
+</li>
+<li>
+<p><strong>Hint 3:</strong> You probably want a variable for the remaining feet. For instance, before you’ve figured out the answer above, the remaining feet is 12345. But once you figure out that there are two full miles in 12345 feet (2 full miles is 10560 feet), then the remaining feet you have to deal with in your calculation is 1785 feet. Then how many full furlongs are in 1785 feet? Well, 2 again, since 660×2\=1320. And finally after we remove those 1320 from 1785 the remaining feet is 465.</p>
+</li>
+<li>
+<p><strong>Hint 4:</strong> Notice how close the words <em>remaining</em> and <em>remainder</em> are.</p>
 </li>
 </ul>
-</div></div>
+<h2 id="submission">Submission:</h2>
+<p>Submit this to <a href="canvas/gradescope">https://canvas.jmu.edu</a></p></div>
             </div>
         </div>
 
@@ -261,14 +141,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -333,8 +213,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2024-05-30 18:54:46.358502+00:00
--->

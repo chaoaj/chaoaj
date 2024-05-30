@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://chaoaj.github.io/cs159fall2024/calendar/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>CS159 Chao Calendar - CHAOAJ - Alvin Chao</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#cs159-chao-calendar" class="nav-link">CS159 Chao Calendar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="cs159-chao-calendar">CS159 Chao Calendar</h1>
+<h2><!--<p><a href="#Week1" title="Current Week">Current Week</a></p>--></h2>
+<p>
+<script type="text/javascript">// <![CDATA[
+dttest1 = new Date(2024,0,16);
+dttest2 = new Date(2024,4,24);
+
+function diff_weeks(dt2, dt1)
+ {
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000; // diff in secs
+  diff /= (60 * 60 * 24 * 7); // convert seconds to weeks
+  return Math.abs(Math.round(diff));
+
+ }
+// Start of semester - remember JS date month is one less than current.
+var dt1 = new Date(2024, 7, 20); // new Date(2023, 7, 17); // January 1 = (2021, 0, 1)
+// document.write("dt1" + dt1);
+var dt2 = new Date();
+// document.write("d2" + dt2);
+wk = diff_weeks(dt2,dt1);
+// document.write("Week: " + wk);
+if (wk >= 16) {
+    wk = 16;
+}
+else if (wk <= 0) {
+    wk = 1;
+}
+document.write("<a href=\"#Week"+wk+"\">Current Week</a>");
+document.write("<!-- wk " + wk + "-->");
+// ]]></script>
+
+</p>
+<p>Java and Config Resources:</p>
+
+<div>(<strong>Note: This schedule is tentative and is subject to change during the semester</strong>) <br /><br />
+
+
+| Week / Topic | Reading | Tue in class | Thu in class | HW / Programming Assignment | Events |
+| --- | ---------- | --------- | ------- | -------------- | --------------------------- |
+| 1 <a name="Week1"></a>  Intro | Obtain book | -        |  c1 8/22      |                             |        |
+| 2 <a name="Week2"></a> Intro | Chp 1 | -         |    c1  8/29      |                             |        |
+| 3 <a name="Week3"></a>Intro | Chp 2 | -            |    c1   9/5       |                             |        |
+| 4 <a name="Week4"></a>  Intro | Chp 3 | -            |    Practice Quiz 1  9/12      |                             |        |
+| 5 <a name="Week5"></a>  Intro | Chp 4 | -            |    Actual Quiz 1 9/19      |                             |        |
+| 6 <a name="Week6"></a>  Intro | Chp 5 | -            |    Practice Quiz 2 c1 9/26      |                             |        |
+| 7 <a name="Week7"></a>  Intro | Chp 6 | -            |    Actual Quiz 2 c1 10/3      |                             |        |
+| 8 <a name="Week8"></a>  Intro | Chp 7 | -            |    Practice Quiz 3 c1 10/10     |                             |        |
+| 9 <a name="Week9"></a> Intro | Chp 8 |  Actual Quiz 3 c        |    c1  10/17     |                             |  Fall Break 16-20      |
+| 10 <a name="Week10"></a> Intro | Chp 9| -            |    Practice Quiz 4 c1 10/24    |                             |        |
+| 11 <a name="Week11"></a>  Intro | Chp 10 | -            |  Actual Quiz 4  c1 10/31   |                             |        |
+| 12 <a name="Week12"></a>   Intro | Chp 11 | -            | Practice Quiz 5   c1 11/7       |                             |        |
+| 13 <a name="Week13"></a>   Intro | Chp 12 | -            | Actual Quiz 5 c1  11/14      |                             |        |
+| 14 <a name="Week14"></a>   Intro | Chp 13 | -            | Practice Quiz 6   c1  11/21      |                             |        |
+| 15 <a name="Week15"></a>   Intro | Thanksgiving break | -            |    c1  11/28      |                             |  Thanksgiving Break 11/25 to 11/29     |
+| 16 <a name="Week16"></a>   Intro | Review | -            |  Actual Quiz 6  c1  12/5      |     | Dec 6 last day of class |
+| 17 <a name="Week17"></a>   Exam week | Exam Schedule |               |    c1  12/12      |                             |        |
+
+
+
+---
+
+
+
+<a href="#top"><span title="Back to Top"></span>Back to Top</a>
+ <p id="back-top" style="display: block;"><a href="#top"><span title="Back to Top"></span>Back to Top</a></p>
+<script type="text/javascript">
+    // <![CDATA[
+    $(window).load(function(){ // using window load function instead of document ready function
+
+    /* Animated scroll to top by @NickLa, Web Designer Wall (http://webdesignerwall.com/tutorials/animated-scroll-to-top) with modifications by johns2ja */
+        // hide #back-top first
+        $("#back-top").hide();
+
+        // fade in #back-top
+        //$(function () { /* remove containing function to ensure it works cross-browser - johns2ja */
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
+
+            // scroll body to 0px on click
+            $('#back-top a').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+    // });       /* remove containing function to ensure it works cross-browser */
+    });
+    // ]]>
+</script>
+
+<style type="text/css">
+<!--
+#back-top {
+  bottom: 130px;
+  left: 5%; /* instead of margin-left - johns2ja */
+  position: fixed;
+}
+#back-top a {
+  color: #bbb !important;
+  display: block;
+  font-size: 11px;
+  height: 75px;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+  width: 75px;
+}
+#back-top span {
+  background: #ddd url("//www.jmu.edu/jmucmsfiles/images/up-arrow.png") no-repeat scroll center center;
+  border-radius: 15px;
+  display: block;
+  height: 75px;
+  margin-bottom: 7px;
+  transition: all 1s ease 0s;
+  width: 75px;
+}
+@media all and (max-width:768px){ /* RWD by johns2ja */
+        #back-top {
+                bottom: 3%;
+                left: 1%;
+        }
+        #back-top a {
+                height: 32px;
+                width: 32px;
+                font-size: 0px;
+        }
+        #back-top span {
+                width: 32px;
+                height: 32px;
+                background-size: 32px;
+        }
+}
+-->
+</style></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

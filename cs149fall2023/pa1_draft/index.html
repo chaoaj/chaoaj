@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://chaoaj.github.io/cs149fall2023/pa1_draft/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Programming Assignment(PA) 1: Poker Dice - CHAOAJ - Alvin Chao</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#programming-assignmentpa-1-poker-dice" class="nav-link">Programming Assignment(PA) 1: Poker Dice</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#provided-code" class="nav-link">Provided Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-a-readiness-quiz-and-dicepy-30-points" class="nav-link">Part A - Readiness Quiz and dice.py (30 points)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-b-code-70-points" class="nav-link">Part B - Code (70 points)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#programming-assignment-attribution" class="nav-link">Programming Assignment Attribution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#acknowledgments" class="nav-link">Acknowledgments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="programming-assignmentpa-1-poker-dice">Programming Assignment(PA) 1: Poker Dice</h1>
+<p><img alt="Poker dice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Dice%2C_game_%28AM_2015.20.16-2%29_%28cropped%29.jpg/290px-Dice%2C_game_%28AM_2015.20.16-2%29_%28cropped%29.jpg" /></p>
+<h2 id="introduction">Introduction</h2>
+<p>Poker dice is a dice game similar to Yahtzee played with 5 six sided dice with face values
+9, 10, J, Q, K , A.</p>
+<!--A playable online version for understanding the problem is located here:
+* <a href="http://the-chaos.com/cgi-bin/chuck-a-luck.cgi">Chuck-a-Luck online</a>
+-->
+
+<p>The following table represents a summary of the rules for Poker Dice scores:</p>
+<table>
+<thead>
+<tr>
+<th>Type#</th>
+<th>Category</th>
+<th>Description</th>
+<th>Scoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>One Pair</td>
+<td>A pair of the same face value 9, 9, 10, J, K</td>
+<td>Sum of Matched Values</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Two Pair</td>
+<td>Two unique pairs of face values 9, 9, 10, 10 K</td>
+<td>Sum of both pair values</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Three of a Kind</td>
+<td>At least Three of the same face value</td>
+<td>Sum of three Similar Dice + 10)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Four of a Kind</td>
+<td>At least Four of the same face value</td>
+<td>Sum of four similar Dice + 20</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Five of a Kind</td>
+<td>All five face values are the same</td>
+<td>100 points</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Full House</td>
+<td>3 of a kind and a pair 9, 9, 9, A, A (unique face values)</td>
+<td>50 points + sum of dice face values</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Small Straight</td>
+<td>4 or more face values in a row</td>
+<td>70 points</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Large Straight</td>
+<td>All 5 dice sequential 9,10,J,Q,K or 10, J, Q, K, A</td>
+<td>95 points</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Chance</td>
+<td>Any roll</td>
+<td>Sum of dice face values</td>
+</tr>
+</tbody>
+</table>
+<p>The final column in the table describes the score if the player chooses the corresponding score type. For example, if a player selects one pair and the roll is ['9', '9', 'J','Q','A'], the score will be 18 because score is twice the pair value. If the dice rolled are ['9', '9', 'Q', 'A', '9'], then the payout will still be 18, because no extra points are given for a three of a kind because one pair was the selected score type.</p>
+<p>Your goal for this assignment is to create a <code>dice</code> module and develop and test a function for determining scoring in Poker Dice.</p>
+<h2 id="provided-code">Provided Code</h2>
+<p>Start with the following source files:</p>
+<ul>
+<li>dice.py -- NEED TO CREATE</li>
+<li><a href="pa1/poker_dice.py">poker_dice.py</a> -- DO NOT EDIT</li>
+<li><a href="pa1/score_dice.py">score_dice.py</a> -- UNFINISHED</li>
+<li><a href="pa1/test_score_dice.py">test_score_dice.py</a> -- UNFINISHED</li>
+</ul>
+<h3 id="dicepy">dice.py</h3>
+<p>The <code>dice</code> module will work with a list of 5 string die face values.  This module will need to work with not just our Poker Dice number of dice (5) but with any number from 1--10 dice.  The module will contain five functions:</p>
+<ol>
+<li>
+<p><code>roll_dice</code> -- This function will take two parameters.  The first will be an int for the number of dice in the list.  The second parameter will be a random seed integer, with a default value of 0. Note it is possible to pass None as a parameter, which should result in a random seed value.  This function will return a list of n dice values (each die has a string face value between '9' - 'A'). If the number of dice is out of range 1--10 then a single die of value '9' will be returned as a list of 1 item. If no parameters are provided, then a list of 5 dice values should be returned (having been generated using a seed of 0).</p>
+</li>
+<li>
+<p><code>are_valid</code> -- This function takes a dice parameter which is a list of from 1--10 dice rolls.  This function will check the length of the list to make sure it is between 1 and 10 and check if the values of all dice in the list are between '9' and 'A'.  Return <code>True</code> if all these conditions are met, <code>False</code> otherwise.</p>
+</li>
+<li>
+<p><code>get_value</code> -- This function takes a string argument and gets the scoring numerical point value of a die face value.
+Face values are: 9 and 10 for the numerical string values, 10 for 'J', 'Q', 'K', and 11 for 'A'.</p>
+</li>
+<li>
+<p><code>num_faces</code> -- This function takes a dice_list parameter which is a list of from 1--10 dice rolls.  It will also take a second parameter for the face value being counted, with a default of None.  The function returns a count of the number of times a particular face value shows on the dice in the list. For example, if the dice are ['9', '9','9', 'A', 'K'], <code>dice.num_faces(dice, 9)</code> will return 3 (since the value '9' occurs three times). If no parameter is passed (i.e., None) then count should return 0.  Also, if an invalid list or face value of None is passed the function should return -1.</p>
+</li>
+<li>
+<p><code>add_values</code> -- This function takes a dice parameter which is a list of from 1--10 dice rolls. It will calculate and return the sum of the face values of the dice in the list.  Make sure you use the validation function for dice and return a -1 for an invalid list of dice.</p>
+</li>
+</ol>
+<h3 id="poker_dicepy">poker_dice.py</h3>
+<p>This module contains a simple terminal-based Poker Dice game. Once you have completed <code>calculate_score.py</code> you can use this driver to try out your code.</p>
+<p>This driver will call the <code>dice.py</code> module and use the <code>roll_dice</code> function to return dice rolls.  It may not be very useful for systematically testing your solution. The main mechanism for running your code for this project will be the <code>test_calculate_score.py</code> file described below.</p>
+<h3 id="score_dicepy">score_dice.py</h3>
+<p>Your main task for this assignment is to implement the <code>score_dice.calculate_score</code> function according to the provided documentation string. For full credit, your finished function must satisfy the following requirements:</p>
+<ul>
+<li>A nested conditional should be used to distinguish between the different scorign types</li>
+<li>Appropriate helper functions must be used to break the problem into smaller and more manageable pieces.</li>
+<li>The <code>add_values</code> and <code>num_faces</code> functions from the <code>dice</code> module should be used.</li>
+<li>Your code must make use of the named constants(FACES, FACES_LIST) declared at the top of the dice program. Avoid the use of hard-coded literal values in your solution.</li>
+<li>Your score_dice.calculate_score function must have only one return statement.</li>
+</ul>
+<h3 id="test_score_dicepy">test_score_dice.py</h3>
+<p>You must write unit tests for <code>score_dice.py</code>. Rather than writing one very long <code>test_score_dice</code> function, you should write several smaller tests to handle distinct cases. The provided file contains two testing functions to get you started.</p>
+<p>Notice that the names of these functions describe the situations they are designed to test.
+For example, the name <code>test_calculate_score_one_pair_no_match</code>:</p>
+<ul>
+<li>test - This makes it clear that this is a testing function</li>
+<li>calculate_score - this is the function being tested</li>
+<li>one_pair_no_match - this is the situation being tested.</li>
+</ul>
+<p>You should properly document your tests and your <code>score_dice.py</code> file.
+Docstrings for test functions are generally not required.</p>
+<p>Categories that you should test include (this is a template for your <code>test_score_dice.py</code> file):</p>
+<ul>
+<li>Test score one pair no match</li>
+<li>Test score one pair one match</li>
+<li>Test score two pair no match</li>
+<li>Test score two pair one match</li>
+<li>Test score three of a kind match</li>
+<li>Test score three of a kind no match</li>
+<li>Test score four of a kind match</li>
+<li>Test score four of a kind no match</li>
+<li>Test score five of a kind match</li>
+<li>Test score five of a kind no match</li>
+<li>Test score small straight match</li>
+<li>Test score small straight no match</li>
+<li>Test score large straight match</li>
+<li>Test score large straight no match</li>
+<li>Test score chance match</li>
+</ul>
+<h2 id="part-a-readiness-quiz-and-dicepy-30-points">Part A - Readiness Quiz and dice.py (30 points)</h2>
+<p>1) Readiness Quiz (10 points) in Canvas.</p>
+<p>Before the deadline for Part A you should read this document carefully, then look at the starter code provided above. Once you have a clear understanding of the expectations for this assignment, complete the readiness quiz in Canvas (10 points). The grading for this quiz will be all or nothing: your score on the quiz will be 0 if you miss any questions.</p>
+<p><strong>If you do not successfully complete the readiness quiz, you cannot receive any credit for Part A or Part B.</strong></p>
+<p>2) You should also complete the <code>dice.py</code> file (20 pts) and submit this to Gradescope by the deadline for your section.</p>
+<p>Be sure to test your <code>dice</code> module carefully for correctness AND style before submitting into gradescope; <strong>You will be limited to 10 submissions for Part A code.</strong></p>
+<h2 id="part-b-code-70-points">Part B - Code (70 points)</h2>
+<p>Upload only your <code>score_dice.py</code> file to Gradescope.   You should not include <code>poker_dice.py</code> or <code>test_score_dice.py</code> in your submission.</p>
+<p>Before uploading your submission to Gradescope, be sure to complete the following steps:</p>
+<ul>
+<li>Test your solution carefully.</li>
+<li>Make sure that <code>poker_dice.py</code> works as expected with your finished code.</li>
+<li>Review the course style guide to ensure that your code meets the style requirements.</li>
+<li>Run <code>flake8</code> and eliminate all warnings.</li>
+<li>Review and update comments as needed.</li>
+</ul>
+<p><strong>You are limited to a maximum of 10 submissions into Gradescope for Part B.</strong></p>
+<h2 id="programming-assignment-attribution">Programming Assignment Attribution</h2>
+<p>Provide a short statement describing any assistance that you received on this assignment, either from another student, an online source, an AI-enabled tool, or any other source.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>This assignment was created by Alvin Chao.  Some parts of the Poker dice description above are borrowed from the Poker Dice Wikipedia page. The Wikipedia article, and this assignment page, are licensed under the Creative Commons Attribution-Share-Alike License 3.0.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

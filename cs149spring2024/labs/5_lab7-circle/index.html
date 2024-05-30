@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://chaoaj.github.io/cs149spring2024/labs/5_lab7-circle/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Lab 7 - Circle Lab - Writing and Calling functions - CHAOAJ - Alvin Chao</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">CHAOAJ - Alvin Chao</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../resources/" class="nav-link">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#lab-7-circle-lab-writing-and-calling-functions" class="nav-link">Lab 7 - Circle Lab - Writing and Calling functions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#objectives" class="nav-link">Objectives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#key-terms" class="nav-link">Key Terms</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-1-creating-stubs" class="nav-link">Part 1: Creating Stubs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-2-creating-a-void-function-with-no-parameters" class="nav-link">Part 2: Creating a Void function With No Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-3-creating-a-value-returning-function-with-no-parameters" class="nav-link">Part 3: Creating a Value Returning function With No Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#part-4-creating-value-returning-functions-with-parameters" class="nav-link">Part 4: Creating Value-Returning functions With Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lab-7-circle-lab-writing-and-calling-functions">Lab 7 - Circle Lab - Writing and Calling functions</h1>
+<h2 id="introduction">Introduction</h2>
+<p>============</p>
+<p>We will be expanding on the use of submissions and testing via https://gradescope.com.
+Collaboration: You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the code. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Create a program with only functions.</li>
+<li>Stub out so the functions can be written and tested incrementally.</li>
+<li>Become more familiar with the math module in Python.</li>
+<li>Document return types</li>
+</ul>
+<h2 id="key-terms">Key Terms</h2>
+<p><strong>return type</strong>
+The data type the function returns.</p>
+<p><strong>return value</strong>
+The value that the function returns via the return statement.</p>
+<p><strong>function stub</strong>
+An empty or incomplete function that returns 0, "", false, etc.</p>
+<h2 id="part-1-creating-stubs">Part 1: Creating Stubs</h2>
+<p>We are going to create a small program to carry out some geometric operations. Note that Python is a loosely typed language so return value types should be specified in :return docstring comments.  It will include a couple of utility functions to make input and printing easier, as well as the calculation of the area of a circle and the volume of a sphere. (Normally, you would design one program to do the geometry and another one to deal with the utility functions, but for today's lab we are putting them together in one program.)</p>
+<ol>
+<li>Download and open the <a href="https://w3.cs.jmu.edu/chaoaj/cs149/circle_driver.py">circle_driver.py</a> program. Do not be concerned with what it contains just yet.</li>
+<li>Create a new source file, circle_play.py.  Create the top level docstring comment including your name and today's date and honor code statement.</li>
+<li>
+<p>Define each of the following functions:</p>
+<ul>
+<li>
+<p>print_greeting will simply print some lines to greet the user upon running the application.
+Create a function stub using the following header:
+def print_greeting()
+This header says that the function is named print_greeting, and accepts no parameters.
+Create function documentation. In this case you only need to describe what this function will
+do.</p>
+</li>
+<li>
+<p>enter_radius - create a function header that looks like this:
+def enter_radius()
+This header says the function is named enter_radius, and accepts no parameters.
+Add function documentation for this function as follows: (note the use of the :return label)</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>    &quot;&quot;&quot;
+     Displays a prompt to the user, then reads in a float value
+     that the user has entered.
+
+     Returns:
+     (float): a float value representing a radius
+    &quot;&quot;&quot;
+</code></pre>
+<ul>
+<li>
+<p>Create the function block, and add in a single return statement, return -999.0 This is a
+"stubbed" return statement that returns a value of the correct type, but is not the value we
+will eventually need.</p>
+</li>
+<li>
+<p>calculate_area - This function will calculate the area of a circle with a given radius.
+    Create a function header named calculate_area and has a single parameter, a float value
+    representing a radius.</p>
+<p>Create the function block with a return statement to return the value -888.0. (These ar
+meaningless values, but if we call the function and its not done, we'll know that by the return
+value.) Add your documentation including a :param tag.</p>
+</li>
+<li>
+<p>calculate_volume - This function will calculate the volume of a sphere with a given radius.
+    Create a function header, function block, return statement, and documentation. The stubbed
+    return value should be -777.0.</p>
+</li>
+<li>
+<p>Save your work at this point, <em>before implementing any of the functions</em>. You should not have any errors. If you do, check to make sure that each function in circle_play is created exactly as described above.</p>
+</li>
+<li>
+<p>Run circle_driver from Thonny or using the command line. What output do you see? Does it make any sense?</p>
+</li>
+</ul>
+<p>Now we will begin to fill in our stubbed functions.</p>
+<p>============</p>
+<h2 id="part-2-creating-a-void-function-with-no-parameters">Part 2: Creating a Void function With No Parameters</h2>
+<p>Begin with print_greeting, which should print the following. (Note that &lt; blank line &gt; just means that you should print a newline there.)</p>
+<p>Welcome to the CS149 Circle Calculator</p>
+<p>&lt; blank line &gt;</p>
+<p>This application will calculate the area of a circle and/or volume of a sphere.</p>
+<p>&lt; blank line &gt;</p>
+<ol>
+<li>Create the code to print these four lines. Run it from the command line.</li>
+<li>You are currently testing the 1st function, so pass the argument 1 to the main function as follows:</li>
+<li>python3 circle_driver.py 1</li>
+<li>Does your greeting print correctly? Make any corrections that you need before moving on.</li>
+</ol>
+<p><em>Explanation</em>: The circle_driver is designed to let you test each of your functions separately. In this case, you have built a single function, so you are testing just that function. The function stubs enable you to run the entire program, but then just fill in the parts that you are ready to complete and test. By testing individual functions, you can focus on getting that function written correctly before moving on to the next one.</p>
+<h2 id="part-3-creating-a-value-returning-function-with-no-parameters">Part 3: Creating a Value Returning function With No Parameters</h2>
+<p>Next you'll fill in the enter_radius function. This function displays a standard prompt, "Enter the radius: " and then reads in the radius from the user input.</p>
+<ol>
+<li>Output the prompt "Enter the radius: ". The cursor should remain on the same line, one space to the right of the colon and read the value the user enters into a radius variable.</li>
+<li>Change the return statement to return the value that the user enters.</li>
+<li>Test your program on the command line running python3 circle_driver.py 2. This time enter the number 2 as the command line argument. What happens?</li>
+</ol>
+<h2 id="part-4-creating-value-returning-functions-with-parameters">Part 4: Creating Value-Returning functions With Parameters</h2>
+<p>Finally, you will fill in each of the calculation functions. You are going to calculate the area of a circle and the volume of a sphere. The area of a circle is defined as A = π r <sup>2</sup>. The volume of a sphere is V = 4/3 π r <sup>3</sup>. Use these formulas to come up with a few test cases for each function.</p>
+<ol>
+<li>Write down your examples on a piece of paper, so you can be sure your code works as expected.</li>
+<li>Begin with the calculate_area function. You may find that the math module is helpful for this step. First, there is a constant defined in that module called pi. Since the constant is in another module, we must use the qualified name math.pi to access it.</li>
+<li>Define the variables that you will need.</li>
+<li>Create the calculation, using math.pi for π.</li>
+<li>Instead of the stub value in your return statement, return the area that you calculate.</li>
+<li>Test your work passing the number 3 in for the command line argument.</li>
+<li>Check your area values against the ones that you calculated by hand. Work with your function until it runs correctly.</li>
+<li>Create the calculate_volume function and test as before using command line argument 4 to test your volume function.</li>
+<li>Finally, test the entire application running the application with no arguments. It should run each function in turn.</li>
+</ol>
+<p>Upload your completed circle_play.py program to <a href="https://gradescope.com">Gradescope</a>. To receive full credit for this assignment, all 4 functions must work correctly. You will not receive full credit for this lab unless your code passes all of the automated formatting tests.</p>
+<pre><code>
+Testing Greeting
+Welcome to the CS149 Circle Calculator
+
+This application will calculate the area of a circle and/or volume of a sphere.
+
+Testing Input
+Enter the radius: 5
+Enter the radius: 10
+Enter the radius: 15
+The values you entered were:
+5.0
+10.0
+15.0
+A circle of radius 5.0 has area of 78.53981633974483
+A circle of radius 10.0 has area of 314.1592653589793
+A circle of radius 15.0 has area of 706.8583470577034
+A sphere of radius 5.0 has volume of 523.5987755982989
+A sphere of radius 10.0 has volume of 4188.790204786391
+A sphere of radius 15.0 has volume of 14137.166941154068
+
+</code></pre>
+<p>This lab was originally created by Nancy Harris and modified by Nathan Sprague.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -4,23 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
-        <link rel="canonical" href="https://chaoaj.github.io/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>CHAOAJ - Alvin Chao</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="canonical" href="https://chaoaj.github.io/cs149fall2023/labs/13_lab16-stars/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Lab16 - Nested Loops (Stars) - CHAOAJ - Alvin Chao</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/mono-blue.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">CHAOAJ - Alvin Chao</a>
+                <a class="navbar-brand" href="../../..">CHAOAJ - Alvin Chao</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -30,23 +30,23 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="about/" class="nav-link">About</a>
+                                <a href="../../../about/" class="nav-link">About</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
+                                <a href="../../../cs149fall2024/" class="nav-link">CS149 Fall 2024</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
+                                <a href="../../../cs159fall2024/" class="nav-link">CS159 Fall 2024</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
+                                <a href="../../../cs149fall2024/syllabus" class="nav-link">149 Syllabus</a>
                             </li>
                             <li class="navitem">
-                                <a href="cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
+                                <a href="../../../cs159fall2024/syllabus" class="nav-link">159 Syllabus</a>
                             </li>
                             <li class="navitem">
                                 <a href="https://canvas.jmu.edu/" class="nav-link">Canvas</a>
@@ -55,7 +55,7 @@
                                 <a href="https://www.gradescope.com/" class="nav-link">Gradescope</a>
                             </li>
                             <li class="navitem">
-                                <a href="resources/" class="nav-link">Resources</a>
+                                <a href="../../../resources/" class="nav-link">Resources</a>
                             </li>
                         </ul>
 
@@ -65,16 +65,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="about/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -93,13 +83,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#alvin-chao" class="nav-link">Alvin Chao</a>
+            <li class="nav-item" data-level="1"><a href="#lab16-nested-loops-stars" class="nav-link">Lab16 - Nested Loops (Stars)</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#courses" class="nav-link">Courses:</a>
+            <li class="nav-item" data-level="2"><a href="#background" class="nav-link">Background</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#contact" class="nav-link">Contact</a>
+            <li class="nav-item" data-level="2"><a href="#objectives" class="nav-link">Objectives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instructions" class="nav-link">Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#generalization" class="nav-link">Generalization</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -110,150 +108,84 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="alvin-chao">Alvin Chao</h1>
-<hr />
-<div id="hcard-Alvin-Chao" class="vcard">
- <a class="url fn" href="http://www.the-chaos.com/alvin">Alvin Chao</a>
- <a class="email" href="mailto:chaoaj [at] jmu.edu">chaoaj [at] jmu.edu</a>
- <div class="adr">
-  <div class="street-address">MSC 5734</div>
-  <span class="locality">Harrisonburg</span>,
-  <span class="region">VA</span>
-  <span class="postal-code">22807</span>
-  <span class="country-name">USA</span>
- </div>
- <div class="tel">540-568-6206</div>
-
-<p style="font-size:smaller;">This <a href="http://microformats.org/wiki/hcard">hCard</a> created with the <a href="http://microformats.org/code/hcard/creator">hCard creator</a>.</p>
-</div>
-
-<hr />
-<h2 id="courses">Courses:</h2>
-<p>Current:<br/></p>
-<hr />
-<table>
-<thead>
-<tr>
-<th>CS 149</th>
-<th>CS 159</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#">Fall 2024</a></td>
-<td><a href="#">Fall 2024</a></td>
-</tr>
-<tr>
-<td>-----------------------------------------------------------------------------------------------------------</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Past Courses:</p>
-
-<hr />
-<table>
-<thead>
-<tr>
-<th>CS 149</th>
-<th>CS 159</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="cs149spring2024/index.html">CS149 Spring 2024</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2023/index.shtml">CS149 Spring 2023</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2022/index.shtml">CS 149 Fall 2022</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2022/index.shtml">CS149 Spring 2022</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2021/index.shtml">CS149 Fall 2021</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2021/index.shtml">CS149 Spring 2021</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2020/index.shtml">CS149 Fall 2020</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2020/index.shtml">CS149 Spring 2020</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2019/index.shtml">CS149 Fall 2019</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2019/index.shtml">CS149 Spring 2019</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2018/index.shtml" title="CS149 Fall 2018">CS149 Fall 2018</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2018/index.shtml" title="CS 149 Spring 2018">CS149 Spring 2018</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2017/index.shtml" title="CS 149 Fall 2017">CS149 Fall 2017</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149spring2017/index.shtml" title="CS 149 Spring 2017">CS149 Spring 2017</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs149fall2016/index.shtml" title="CS 149 Fall 2016">CS149 Fall 2016</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="cs139spring2016.shtml" title="CS139 Spring 2016">CS139 Spring 2016</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td><a href="Zcs240fall2015/index.shtml" title="CS 240 Fall 2015">CS240 Fall 2015</a></td>
-<td>.</td>
-</tr>
-<tr>
-<td>---------------------------------------------------------------------------------------------------</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="contact">Contact</h2>
-<div class="yui3-u-3-4 yui3u34">
-<div style="text-align: left;">Contact chaoaj[at]jmu.edu for more information about this page or Twitter: <a href="https://twitter.com/chaoaj" title="Chaoaj Twitter">@chaoaj</a><br>
- <a href="http://www.the-chaos.com/alvin/ajcres.htm" style="font-size: 10px;"></a></div>
+<h1 id="lab16-nested-loops-stars">Lab16 - Nested Loops (Stars)</h1>
+<p><img alt="stars" src="http://the-chaos.com/alvin/cs149spring2022/labs/lab-15/Stars.jpg" /></p>
+<h2 id="background">Background</h2>
+<p>In the good old days, we didn't have fancy computer graphics. So we had to rely on ASCII artLinks to an external site. and the user's imagination. Today's lab will take you back in time! Your task is to draw various pictures of stars (<code>'*'</code>) that require the creative use of iteration and decisions.</p>
+<h2 id="objectives">Objectives</h2>
 <ul>
-<li style="text-align: left;">
-<div><a href="http://www.the-chaos.com/alvin/ajcres.htm" style="font-size: 10px;">See my&nbsp;Resume</a></div>
-</li>
-<li style="text-align: left;">
-<div><a href="http://www.the-chaos.com/alvin/ajcres.htm" style="font-size: 10px;"></a><a href="http://pushdashpop.wordpress.com/" style="font-size: 10px;">My Blog</a></div>
-</li>
-<li>
-<div style="text-align: left;"><a href="http://pushdashpop.wordpress.com/" style="font-size: 10px;"></a><a href="http://www.the-chaos.com/alvin" style="font-size: 10px;">My Personal Homepage: http://www.the-chaos.com/alvin</a></div>
-</li>
+<li>Write nested for loops and decisions.</li>
+<li>Solve counting problems with loops.</li>
 </ul>
-</div></div>
+<h2 id="instructions">Instructions</h2>
+<ul>
+<li>Download <a href="https://w3.cs.jmu.edu/chaoaj/cs149/stars.py">stars.py</a> open it in Thonny.</li>
+<li>Write your name and today's date in the docstring comment.</li>
+<li>Run the program. What shape does this pattern produce?</li>
+<li>Notice the relationship between the row (outer loop) and the number of stars that are printed.</li>
+<li>Notice the relationship between the col (inner loop) and the place where we move to a new line.</li>
+<li>Add code to your program to create functions for Patterns A, B, and C as shown below.</li>
+<li>The functions should include a parameter max_rows that will give the number of rows to output.</li>
+</ul>
+<h3 id="pattern-a">Pattern A</h3>
+<pre><code>**********
+*********
+********
+*******
+******
+*****
+****
+***
+**
+*
+</code></pre>
+<p>The leftmost stars are in the leftmost output column. Test your code with an odd number of stars and an even number of stars.</p>
+<p><strong>HINT</strong>: While developing the code, replace each space with another character that is visible.</p>
+<h3 id="pattern-b">Pattern B</h3>
+<pre><code>
+         *
+        **
+       ***
+      ****
+     *****
+    ******
+   *******
+  ********
+ *********
+**********
+</code></pre>
+<p>The leftmost star of the last row is in the first position of the output column.</p>
+<p><strong>HINT</strong>: You used star_count in the original example and Pattern A. You should think about using a blank_count variable as well.</p>
+<h3 id="pattern-c">Pattern C</h3>
+<pre><code>**********
+ *********
+  ********
+   *******
+    ******
+     *****
+      ****
+       ***
+        **
+         *
+</code></pre>
+<p>The top row, leftmost star is in the first position of the output.</p>
+<p><strong>HINT</strong>: It should be the same as Pattern B, except for the way you calculate blank_count and star_count.</p>
+<h2 id="generalization">Generalization</h2>
+<p>Finish the functions patterns A, B, and C.
+If you finish early, work on the following pattern D.</p>
+<h3 id="pattern-d-challenge">Pattern D (challenge)</h3>
+<pre><code>     *
+    ***
+   *****
+  *******
+ *********
+  *******
+   *****
+    ***
+     *
+</code></pre>
+<p>For an odd number of rows, you would only have one middle line. The middle row leftmost star is in the first position of the output.</p>
+<p><strong>HINT</strong>: Consider writing two loops: one for the top half, and another for the bottom half. You may also want to increment and decrement star_count and blank_count, rather than calculate them directly based on the row number.</p></div>
             </div>
         </div>
 
@@ -261,14 +193,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -333,8 +265,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2024-05-30 18:54:46.358502+00:00
--->
